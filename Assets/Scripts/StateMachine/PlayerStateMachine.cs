@@ -28,7 +28,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     // gravity variables
     float _gravity = -9.8f;
-    float _groundedGravity = -1f;
+    float _groundedGravity = -5f;
 
     // jumping variables
     bool _isJumpPressed = false;

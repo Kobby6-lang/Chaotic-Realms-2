@@ -27,5 +27,14 @@ public class Search : MonoBehaviour
             Debug.Log("Enemy is behind the player.");
         }
     }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.collider.tag == "dragon")
+        {
+            hit.gameObject.GetComponent<DragonDetect>().Hit(transform);
+        }
+       
+    }
 }
 

@@ -155,7 +155,6 @@ public class PlayerStateMachine : MonoBehaviour
     {
       _currentMovementInput = context.ReadValue<Vector2>();
       _isMovementPressed = _currentMovementInput.x != _zero || _currentMovementInput.y != _zero;
-        if (_isMovementPressed) SoundManager.PlaySound(SoundType.Footsteps);
     }
 
     // callback handler function for jump buttons

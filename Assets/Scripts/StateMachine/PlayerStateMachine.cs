@@ -93,15 +93,6 @@ public class PlayerStateMachine : MonoBehaviour
       _isJumpingHash = Animator.StringToHash("isJumping");
       _jumpCountHash = Animator.StringToHash("jumpCount");
 
-      // set the player input callbacks
-      _playerInput.CharacterControls.Move.started += OnMovementInput;
-      _playerInput.CharacterControls.Move.canceled += OnMovementInput;
-      _playerInput.CharacterControls.Move.performed += OnMovementInput;
-      _playerInput.CharacterControls.Run.started += OnRun;
-      _playerInput.CharacterControls.Run.canceled += OnRun;
-      _playerInput.CharacterControls.Jump.started += OnJump;
-      _playerInput.CharacterControls.Jump.canceled += OnJump;
-
       SetupJumpVariables();
     }
 
@@ -164,6 +155,7 @@ public class PlayerStateMachine : MonoBehaviour
     {
       _currentMovementInput = context.ReadValue<Vector2>();
       _isMovementPressed = _currentMovementInput.x != _zero || _currentMovementInput.y != _zero;
+        if (_isMovementPressed) SoundManager.PlaySound(SoundType.Footsteps);
     }
 
     // callback handler function for jump buttons
@@ -177,17 +169,36 @@ public class PlayerStateMachine : MonoBehaviour
     void OnRun(InputAction.CallbackContext context)
     {
       _isRunPressed = context.ReadValueAsButton();
+        if (_isRunPressed) SoundManager.PlaySound(SoundType.Footsteps);
     }
 
     void OnEnable()
     {
       // enable the character controls action map
       _playerInput.CharacterControls.Enable();
+        // set the player input callbacks
+        _playerInput.CharacterControls.Move.started += OnMovementInput;
+        _playerInput.CharacterControls.Move.canceled += OnMovementInput;
+        _playerInput.CharacterControls.Move.performed += OnMovementInput;
+        _playerInput.CharacterControls.Run.started += OnRun;
+        _playerInput.CharacterControls.Run.canceled += OnRun;
+        _playerInput.CharacterControls.Jump.started += OnJump;
+        _playerInput.CharacterControls.Jump.canceled += OnJump;
+
     }
 
     void OnDisable()
     {
       // disable the character controls action map
       _playerInput.CharacterControls.Disable();
+        // set the player input callbacks
+        _playerInput.CharacterControls.Move.started += OnMovementInput;
+        _playerInput.CharacterControls.Move.canceled += OnMovementInput;
+        _playerInput.CharacterControls.Move.performed += OnMovementInput;
+        _playerInput.CharacterControls.Run.started += OnRun;
+        _playerInput.CharacterControls.Run.canceled += OnRun;
+        _playerInput.CharacterControls.Jump.started += OnJump;
+        _playerInput.CharacterControls.Jump.canceled += OnJump;
+
     }
 }

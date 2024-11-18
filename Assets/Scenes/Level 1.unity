@@ -370,6 +370,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 79eed609550a41e46b4b5e1132f3872c, type: 3}
   - {fileID: 8300000, guid: 3308ab0b1d4bb1b4297ec261d2c033de, type: 3}
   - {fileID: 8300000, guid: 8fd5d50b0409fa54db5ff1e497f478c6, type: 3}
+  - {fileID: 8300000, guid: b0214e6ead3ad774e9a2d9b7d7fe0468, type: 3}
 --- !u!82 &305021888
 AudioSource:
   m_ObjectHideFlags: 0
@@ -892,7 +893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673390850}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06100041, y: 0.04417083, z: -0.002702123, w: 0.99715626}
+  m_LocalRotation: {x: 0.061562825, y: 0.044192985, z: -0.002728501, w: 0.9971207}
   m_LocalPosition: {x: -16.470001, y: 22.875492, z: -131.9403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3684,7 +3685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ec7c9745108dea943862d551c1b53dff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.212
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ec7c9745108dea943862d551c1b53dff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3752,7 +3753,7 @@ PrefabInstance:
       addedObject: {fileID: 1876463053}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ec7c9745108dea943862d551c1b53dff, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1876463055}
+      addedObject: {fileID: 1876463057}
   m_SourcePrefab: {fileID: 100100000, guid: ec7c9745108dea943862d551c1b53dff, type: 3}
 --- !u!1 &1187902691
 GameObject:
@@ -4360,7 +4361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543814311}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.061000407, y: 0.04417083, z: -0.0027021226, w: 0.9971563}
+  m_LocalRotation: {x: 0.06156282, y: 0.044192977, z: -0.0027285009, w: 0.9971207}
   m_LocalPosition: {x: -16.470001, y: 22.875492, z: -131.9403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5129,7 +5130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1876463048}
   enemy: {fileID: 1570315877}
---- !u!136 &1876463055
+--- !u!136 &1876463057
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

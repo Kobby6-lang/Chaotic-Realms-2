@@ -7,7 +7,8 @@ public enum SoundType
     Footsteps,
     Hit,
     Landing,
-    Jump
+    Jump,
+    Yawn
 }
 [RequireComponent(typeof(AudioSource))]
 

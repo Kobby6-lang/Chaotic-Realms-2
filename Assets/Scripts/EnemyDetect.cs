@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class DragonDetect : MonoBehaviour
+public class EnemyDetect : MonoBehaviour
 {
     private bool inContact = false;
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class DragonDetect : MonoBehaviour
     {
         if ((player.position.y > transform.position.y))
         {
-            Debug.Log("Dragon hit");
+            Debug.Log("Enemy hit");
             inContact = true;
 
         }

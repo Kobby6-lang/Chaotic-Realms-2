@@ -30,9 +30,9 @@ public class Search : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.collider.tag == "dragon")
+        if (hit.collider.tag == "Enemy")
         {
-            hit.gameObject.GetComponent<DragonDetect>().Hit(transform);
+            hit.gameObject.GetComponent<EnemyDetect>().Hit(transform);
         }
        
     }

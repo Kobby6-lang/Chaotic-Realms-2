@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public class PlayerStateMachine : MonoBehaviour
 {
     // declare reference variables
     CharacterController _characterController;
     Animator _animator;
     PlayerInput _playerInput; // NOTE: PlayerInput class must be generated from New Input System in Inspector
+    AudioSource _audioSource; // Added for playing footstep sounds
 
     // variables to store optimized setter/getter parameter IDs
     int _isWalkingHash;
@@ -72,6 +74,11 @@ public class PlayerStateMachine : MonoBehaviour
     public float RunMultiplier { get { return _runMultiplier; } }
     public Vector2 CurrentMovementInput { get { return _currentMovementInput; } }
 
+    // Add footstep audio clips
+    public AudioClip[] footstepSounds;
+    public float footstepVolume = 0.5f;
+    private float _footstepInterval = 0.5f;
+    private float _footstepTimer = 0f;
 
     // Awake is called earlier than Start in Unity's event life cycle
     void Awake()
@@ -80,6 +87,7 @@ public class PlayerStateMachine : MonoBehaviour
         _playerInput = new PlayerInput();
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>(); // Assign AudioSource component
 
         // setup state
         _states = new PlayerStateFactory(this);
@@ -91,7 +99,6 @@ public class PlayerStateMachine : MonoBehaviour
         _isRunningHash = Animator.StringToHash("isRunning");
         _isJumpingHash = Animator.StringToHash("isJumping");
         _jumpCountHash = Animator.StringToHash("jumpCount");
-
 
         SetupJumpVariables();
     }
@@ -129,6 +136,41 @@ public class PlayerStateMachine : MonoBehaviour
         HandleRotation();
         _currentState.UpdateStates();
         _characterController.Move(_appliedMovement * Time.deltaTime);
+
+        HandleFootstepSounds();
+    }
+
+    void HandleFootstepSounds()
+    {
+        // Reset footstep timer if the player is not moving
+        if (!_isMovementPressed || !_characterController.isGrounded)
+        {
+            _footstepTimer = 0f;
+            return;
+        }
+
+        _footstepTimer += Time.deltaTime;
+
+        if (_footstepTimer >= _footstepInterval)
+        {
+            _footstepTimer = 0f;
+            PlayFootstepSound();
+        }
+    }
+
+    void PlayFootstepSound()
+    {
+        Debug.Log("Attempting to play footstep sound.");
+        if (footstepSounds.Length > 0)
+        {
+            int index = Random.Range(0, footstepSounds.Length);
+            Debug.Log("Playing footstep sound: " + index);
+            _audioSource.PlayOneShot(footstepSounds[index], footstepVolume);
+        }
+        else
+        {
+            Debug.LogWarning("No footstep sounds available.");
+        }
     }
 
     void HandleRotation()
@@ -169,9 +211,8 @@ public class PlayerStateMachine : MonoBehaviour
     {
         _isRunPressed = context.ReadValueAsButton();
     }
-
-    void OnEnable()
-    {
+        void OnEnable()
+        {
         // set the player input callbacks
         _playerInput.CharacterControls.Move.started += OnMovementInput;
         _playerInput.CharacterControls.Move.canceled += OnMovementInput;
@@ -182,7 +223,7 @@ public class PlayerStateMachine : MonoBehaviour
         _playerInput.CharacterControls.Jump.canceled += OnJump;
         // enable the character controls action map
         _playerInput.CharacterControls.Enable();
-    }
+        }
 
     void OnDisable()
     {

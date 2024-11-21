@@ -9,7 +9,10 @@ public class PlayerStateMachine : MonoBehaviour
     CharacterController _characterController;
     Animator _animator;
     PlayerInput _playerInput; // NOTE: PlayerInput class must be generated from New Input System in Inspector
-    AudioSource _audioSource; // Added for playing footstep sounds
+    // Added for playing footstep sounds
+    public AudioClip jumpSound;
+    public float jumpVolume = 0.7f; 
+    public AudioSource audioSource;
 
     // variables to store optimized setter/getter parameter IDs
     int _isWalkingHash;
@@ -87,7 +90,7 @@ public class PlayerStateMachine : MonoBehaviour
         _playerInput = new PlayerInput();
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
-        _audioSource = GetComponent<AudioSource>(); // Assign AudioSource component
+        audioSource = GetComponent<AudioSource>(); // Assign AudioSource component
 
         // setup state
         _states = new PlayerStateFactory(this);
@@ -165,7 +168,7 @@ public class PlayerStateMachine : MonoBehaviour
         {
             int index = Random.Range(0, footstepSounds.Length);
             Debug.Log("Playing footstep sound: " + index);
-            _audioSource.PlayOneShot(footstepSounds[index], footstepVolume);
+            audioSource.PlayOneShot(footstepSounds[index], footstepVolume);
         }
         else
         {

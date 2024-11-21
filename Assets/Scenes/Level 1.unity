@@ -451,11 +451,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2113936866016891686, guid: 6431491a1897e4d4f8f8fcc0eea70280, type: 3}
   m_PrefabInstance: {fileID: 331241898}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &331547297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6183835911465939219, guid: 8e0c082451df3794b8fe12928399fcf5, type: 3}
+  m_PrefabInstance: {fileID: 1218605170722172886}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &331547298 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6836417697697310334, guid: 8e0c082451df3794b8fe12928399fcf5, type: 3}
   m_PrefabInstance: {fileID: 1218605170722172886}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &331547311
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331547297}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &620448398
 GameObject:
   m_ObjectHideFlags: 0
@@ -4720,6 +4752,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ad4c3272872444ab1a86a1616af9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSound: {fileID: 8300000, guid: d444c933c6f4f254daca33a347f2eb50, type: 3}
+  jumpVolume: 0.7
+  audioSource: {fileID: 1876463060}
   footstepSounds:
   - {fileID: 8300000, guid: a86a930989aef8343b28e3292bdc1109, type: 3}
   - {fileID: 8300000, guid: fcb65962d1d28c840b580fe54e024aeb, type: 3}
@@ -4729,7 +4764,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6067875eb7fa5014784963aa85f4c679, type: 3}
   - {fileID: 8300000, guid: 9b87ac8b9acf5aa49a7412c1d44edc8d, type: 3}
   - {fileID: 8300000, guid: 1df61e8bfaea0c5468a29d63cdb4af3d, type: 3}
-  footstepVolume: 0.5
+  footstepVolume: 1
 --- !u!143 &1876463046
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5697,7 +5732,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6183835911465939219, guid: 8e0c082451df3794b8fe12928399fcf5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 331547311}
   m_SourcePrefab: {fileID: 100100000, guid: 8e0c082451df3794b8fe12928399fcf5, type: 3}
 --- !u!1001 &8535313760734207778
 PrefabInstance:

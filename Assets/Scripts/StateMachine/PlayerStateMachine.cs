@@ -226,7 +226,7 @@ public class PlayerStateMachine : MonoBehaviour
         _playerInput.CharacterControls.Jump.canceled += OnJump;
         // enable the character controls action map
         _playerInput.CharacterControls.Enable();
-    }
+     }
 
     void OnDisable()
     {

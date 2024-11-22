@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 
 public abstract class StateManager<EState> : MonoBehaviour where EState : Enum

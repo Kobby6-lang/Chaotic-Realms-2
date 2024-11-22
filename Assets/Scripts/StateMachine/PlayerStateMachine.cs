@@ -37,8 +37,8 @@ public class PlayerStateMachine : MonoBehaviour
     // jumping variables
     bool _isJumpPressed = false;
     float _initialJumpVelocity;
-    float _maxJumpHeight = 4.0f;
-    float _maxJumpTime = .75f;
+    float _maxJumpHeight = .9f;
+    float _maxJumpTime = .50f;
     bool _isJumping = false;
     int _isJumpingHash;
     int _jumpCountHash;
@@ -214,8 +214,8 @@ public class PlayerStateMachine : MonoBehaviour
     {
         _isRunPressed = context.ReadValueAsButton();
     }
-        void OnEnable()
-        {
+    void OnEnable()
+    {
         // set the player input callbacks
         _playerInput.CharacterControls.Move.started += OnMovementInput;
         _playerInput.CharacterControls.Move.canceled += OnMovementInput;
@@ -226,7 +226,7 @@ public class PlayerStateMachine : MonoBehaviour
         _playerInput.CharacterControls.Jump.canceled += OnJump;
         // enable the character controls action map
         _playerInput.CharacterControls.Enable();
-        }
+    }
 
     void OnDisable()
     {

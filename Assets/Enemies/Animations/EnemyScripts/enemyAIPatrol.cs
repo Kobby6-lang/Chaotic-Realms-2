@@ -15,6 +15,11 @@ public class enemyAIPatrol : MonoBehaviour
     [SerializeField] float range;
     [SerializeField] float stoppingDistance = 2f;
 
+    // State Change
+
+    [SerializeField] float sightRange, attackRange;
+    bool playerInSight, playerInAttackRange;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +31,21 @@ public class enemyAIPatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Patrol();
+        playerInSight = Physics.CheckSphere(transform.position, sightRange, playerLayer);
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
+        if (!playerInSight && !playerInAttackRange) Patrol();
+        if (playerInSight && !playerInAttackRange) Chase();
+        if (playerInSight && playerInAttackRange) Attack();
+    }
+    
+    void Chase() 
+    {
+        agent.SetDestination(player.transform.position);
+    }
+
+    void Attack() 
+    {
+
     }
 
     void Patrol()

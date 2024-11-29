@@ -36,23 +36,8 @@ public class enemyAIPatrol : MonoBehaviour
         playerInSight = Physics.CheckSphere(transform.position, sightRange, playerLayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
         if (!playerInSight && !playerInAttackRange) Patrol();
-        if (playerInSight && !playerInAttackRange) Chase();
-        if (playerInSight && playerInAttackRange) Attack();
     }
     
-    void Chase() 
-    {
-        agent.SetDestination(player.transform.position);
-    }
-
-    void Attack() 
-    {
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack")) 
-        {
-            animator.SetTrigger("Attack");
-            agent.SetDestination(transform.position);
-        }
-    }
 
     void Patrol()
     {

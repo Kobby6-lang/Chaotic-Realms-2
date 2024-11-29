@@ -109,13 +109,13 @@ public class PlayerStateMachine : MonoBehaviour
     // set the initial velocity and gravity using jump heights and durations
     void SetupJumpVariables()
     {
-        float timeToApex = _maxJumpTime / 2;
+        float timeToApex = _maxJumpTime / 4f;
         _gravity = (-2 * _maxJumpHeight) / Mathf.Pow(timeToApex, 2);
         _initialJumpVelocity = (2 * _maxJumpHeight) / timeToApex;
-        float secondJumpGravity = (-2 * (_maxJumpHeight + 2)) / Mathf.Pow((timeToApex * 1.25f), 2);
-        float secondJumpInitialVelocity = (2 * (_maxJumpHeight + 2)) / (timeToApex * 1.25f);
-        float thirdJumpGravity = (-2 * (_maxJumpHeight + 4)) / Mathf.Pow((timeToApex * 1.5f), 2);
-        float thirdJumpInitialVelocity = (2 * (_maxJumpHeight + 4)) / (timeToApex * 1.5f);
+        float secondJumpGravity = (-2 * (_maxJumpHeight + 1)) / Mathf.Pow((timeToApex * 1.25f), 2);
+        float secondJumpInitialVelocity = (2 * (_maxJumpHeight + 1)) / (timeToApex * 1.25f);
+        float thirdJumpGravity = (-2 * (_maxJumpHeight + 2)) / Mathf.Pow((timeToApex * 1.5f), 2);
+        float thirdJumpInitialVelocity = (2 * (_maxJumpHeight + 2)) / (timeToApex * 1.5f);
 
         _initialJumpVelocities.Add(1, _initialJumpVelocity);
         _initialJumpVelocities.Add(2, secondJumpInitialVelocity);

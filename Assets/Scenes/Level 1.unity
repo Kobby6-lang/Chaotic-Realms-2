@@ -3692,6 +3692,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ec7c9745108dea943862d551c1b53dff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1876463062}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ec7c9745108dea943862d551c1b53dff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1876463064}
   m_SourcePrefab: {fileID: 100100000, guid: ec7c9745108dea943862d551c1b53dff, type: 3}
 --- !u!1 &1187902691
 GameObject:
@@ -4762,6 +4765,19 @@ MonoBehaviour:
   threshold: -1
   playerTransform: {fileID: 1876463048}
   respawnPoint: {fileID: 1335989380}
+--- !u!114 &1876463064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876463044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa36473c5c3a2e439294cd5e9da795b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  squashForce: 5
 --- !u!1 &1901223295
 GameObject:
   m_ObjectHideFlags: 0
@@ -5706,18 +5722,6 @@ Transform:
   - {fileID: 2704460573260656286}
   m_Father: {fileID: 7052938529565655984}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2293706460637557231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6183835912140723931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1a71592254e5914c86ec08fcbe9c9c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2345373845304630687
 GameObject:
   m_ObjectHideFlags: 0
@@ -5937,12 +5941,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6836417698364752310}
+  - component: {fileID: 8425542124631077907}
   - component: {fileID: 707452113696322490}
   - component: {fileID: 8425542124631077905}
-  - component: {fileID: 2293706460637557231}
   - component: {fileID: 1867376910}
   - component: {fileID: 1867376915}
-  - component: {fileID: 8425542124631077906}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -6097,7 +6100,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3481804, y: 1.6307424, z: 1.23}
   m_Center: {x: 0.014810383, y: 0.7169166, z: 0}
---- !u!114 &8425542124631077906
+--- !u!114 &8425542124631077907
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6106,11 +6109,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6183835912140723931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676852495e36976438c7c47081054fe5, type: 3}
+  m_Script: {fileID: 11500000, guid: f1a71592254e5914c86ec08fcbe9c9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 10
   currentHealth: 0
+  isSquashed: 0
 --- !u!1001 &8535313760734207778
 PrefabInstance:
   m_ObjectHideFlags: 0

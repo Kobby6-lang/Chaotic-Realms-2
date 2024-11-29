@@ -7,6 +7,7 @@ public class DeathAndRespawnManager : MonoBehaviour
     public TMP_Text deathText; // TextMesh Pro UI element to display death count
     public float threshold; // Y-axis threshold below which the player is considered "dead"
     public Transform playerTransform; // Reference to the player's Transform component
+    public Transform respawnPoint; // Reference to the respawn point Transform
 
     private void Awake()
     {
@@ -39,8 +40,6 @@ public class DeathAndRespawnManager : MonoBehaviour
         {
             PlayerDeath(); // Call the method to handle player death
             PlayerRespawn(); // Call the method to handle player respawn
-            // Reset player's position to a specific point
-            playerTransform.position = new Vector3(0.41f, 2.32f, 0.005f);
         }
     }
 
@@ -58,6 +57,15 @@ public class DeathAndRespawnManager : MonoBehaviour
     void PlayerRespawn()
     {
         IncreaseRespawns(); // Increment the respawn count internally
+        // Reset player's position to the respawn point
+        if (respawnPoint != null)
+        {
+            playerTransform.position = respawnPoint.position;
+        }
+        else
+        {
+            Debug.LogWarning("Respawn point not set!");
+        }
     }
 
     void OnApplicationQuit()

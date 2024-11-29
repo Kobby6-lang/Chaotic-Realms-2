@@ -4,7 +4,6 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-    public float deathThreshold = -10f; // Y-axis threshold below which the player is considered "dead"
     public Transform respawnPoint; // Reference to the respawn position
     private DeathAndRespawnManager respawnManager;
 
@@ -19,15 +18,6 @@ public class PlayerHealth : MonoBehaviour
         if (respawnManager == null)
         {
             Debug.LogError("DeathAndRespawnManager not found in the scene!");
-        }
-    }
-
-    void Update()
-    {
-        if (transform.position.y < deathThreshold)
-        {
-            Debug.Log("Player below threshold, handling death");
-            HandleDeath(); // Handle death if player falls below the threshold
         }
     }
 

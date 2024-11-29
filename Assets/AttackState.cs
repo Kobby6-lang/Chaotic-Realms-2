@@ -60,7 +60,7 @@ public class AttackState : StateMachineBehaviour
     {
         if (playerHealth != null)
         {
-            playerHealth.TakeDamage(10); // Example damage value
+            playerHealth.TakeDamage(30); // Example damage value
         }
     }
 }

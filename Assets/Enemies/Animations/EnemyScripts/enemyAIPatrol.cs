@@ -14,6 +14,7 @@ public class enemyAIPatrol : MonoBehaviour
     bool walkpointSet;
     [SerializeField] float range;
     [SerializeField] float stoppingDistance = 2f;
+    Animator animator;
 
     // State Change
 
@@ -26,6 +27,7 @@ public class enemyAIPatrol : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player");
         SearchForDest();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,7 +47,11 @@ public class enemyAIPatrol : MonoBehaviour
 
     void Attack() 
     {
-
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Enemy_Attack")) 
+        {
+            animator.SetTrigger("Attack");
+            agent.SetDestination(transform.position);
+        }
     }
 
     void Patrol()

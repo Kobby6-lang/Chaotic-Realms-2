@@ -6115,6 +6115,8 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   isSquashed: 0
+  animator: {fileID: 1867376910}
+  fallDelay: 1
 --- !u!1001 &8535313760734207778
 PrefabInstance:
   m_ObjectHideFlags: 0

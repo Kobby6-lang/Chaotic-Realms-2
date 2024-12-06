@@ -9,6 +9,8 @@ public class EnemyDetect : MonoBehaviour
     public int maxHealth = 10;
     public int currentHealth;
     public bool isSquashed = false;
+    public float fallDelay = 1.0f; // Delay before falling through the floor
+    public float squashDelay = 0.5f; // Delay before starting the squash effect
 
     void Awake()
     {
@@ -40,6 +42,7 @@ public class EnemyDetect : MonoBehaviour
             Debug.Log("Enemy hit");
             inContact = true;
             TakeDamage(maxHealth); // Take full damage to squash the enemy
+            GrantPowerUp(player); // Grant the player a power-up
         }
     }
 
@@ -57,8 +60,35 @@ public class EnemyDetect : MonoBehaviour
     {
         Debug.Log("Enemy squashed!");
         isSquashed = true;
-        // Add squash animation or effect here
-        Destroy(gameObject, 0.5f); // Destroy the enemy after 0.5 seconds
+        StartCoroutine(SquashEffect());
+    }
+
+    private IEnumerator SquashEffect()
+    {
+        // Wait for the squash delay before starting the squash effect
+        yield return new WaitForSeconds(squashDelay);
+
+        // Perform squash effect
+        Vector3 originalScale = transform.localScale;
+        Vector3 squashedScale = new Vector3(originalScale.x, originalScale.y * 0.5f, originalScale.z);
+
+        float squashDuration = 0.2f;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < squashDuration)
+        {
+            transform.localScale = Vector3.Lerp(originalScale, squashedScale, elapsedTime / squashDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localScale = squashedScale;
+
+        // Wait for a moment before falling through the floor
+        yield return new WaitForSeconds(fallDelay);
+
+        Fall();
+        Destroy(gameObject, 0.5f); // Destroy the enemy after falling
     }
 
     private void Fall()
@@ -67,5 +97,16 @@ public class EnemyDetect : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<NavMeshAgent>().enabled = false;
     }
-}
 
+    private void GrantPowerUp(Transform player)
+    {
+        // Example code to grant the player a power-up
+        // Replace with actual power-up logic
+        Debug.Log("Power-up granted to player!");
+        PlayerPowerUp powerUp = player.GetComponent<PlayerPowerUp>();
+        if (powerUp != null)
+        {
+            powerUp.ActivatePowerUp();
+        }
+    }
+}

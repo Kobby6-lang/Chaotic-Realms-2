@@ -10,3 +10,4 @@ public class RotateClockwise : MonoBehaviour
         transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.Self);
     }
 }
+

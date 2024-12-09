@@ -3695,6 +3695,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ec7c9745108dea943862d551c1b53dff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1876463064}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ec7c9745108dea943862d551c1b53dff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1876463066}
   m_SourcePrefab: {fileID: 100100000, guid: ec7c9745108dea943862d551c1b53dff, type: 3}
 --- !u!1 &1187902691
 GameObject:
@@ -4559,6 +4562,7 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: d444c933c6f4f254daca33a347f2eb50, type: 3}
   jumpVolume: 0.7
   audioSource: {fileID: 1876463060}
+  _runMultiplier: 5.5
   footstepSounds:
   - {fileID: 8300000, guid: a86a930989aef8343b28e3292bdc1109, type: 3}
   - {fileID: 8300000, guid: fcb65962d1d28c840b580fe54e024aeb, type: 3}
@@ -4778,6 +4782,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   squashForce: 5
+--- !u!114 &1876463066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876463044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c803e5d1a3a5e448021232fc7b8290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedBoostMultiplier: 2
+  speedBoostDuration: 5
+  maxSpeed: 10
 --- !u!1 &1901223295
 GameObject:
   m_ObjectHideFlags: 0
@@ -6115,8 +6134,8 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   isSquashed: 0
-  animator: {fileID: 1867376910}
   fallDelay: 1
+  squashDelay: 0.5
 --- !u!1001 &8535313760734207778
 PrefabInstance:
   m_ObjectHideFlags: 0

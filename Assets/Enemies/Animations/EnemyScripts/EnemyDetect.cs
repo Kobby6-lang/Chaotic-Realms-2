@@ -100,8 +100,7 @@ public class EnemyDetect : MonoBehaviour
 
     private void GrantPowerUp(Transform player)
     {
-        // Example code to grant the player a power-up
-        // Replace with actual power-up logic
+        // Grant the player a speed power-up
         Debug.Log("Power-up granted to player!");
         PlayerPowerUp powerUp = player.GetComponent<PlayerPowerUp>();
         if (powerUp != null)
@@ -110,3 +109,4 @@ public class EnemyDetect : MonoBehaviour
         }
     }
 }
+

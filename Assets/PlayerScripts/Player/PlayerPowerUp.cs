@@ -4,8 +4,8 @@ using UnityEngine;
 public class PlayerPowerUp : MonoBehaviour
 {
     public float speedBoostMultiplier = 7.5f; // Adjusted multiplier for the speed boost
-    public float speedBoostDuration = 7f; // Duration of the speed boost
-    public float maxSpeed = 15f; // Maximum speed limit
+    public float speedBoostDuration = 100f; // Duration of the speed boost
+    public float maxSpeed = 100f; // Maximum speed limit
 
     private PlayerStateMachine playerStateMachine;
     private float originalSpeed;

@@ -50,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
         {
             transform.position = respawnPoint.position;
             currentHealth = maxHealth; // Reset health
+            Debug.Log("Player respawned");
         }
         else
         {
@@ -57,5 +58,6 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 }
+
 
 

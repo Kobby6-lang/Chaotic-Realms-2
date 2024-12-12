@@ -320,6 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 49593721}
+  - component: {fileID: 49593722}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -347,6 +348,18 @@ RectTransform:
   m_AnchoredPosition: {x: 400, y: 410.69177}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &49593722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49593720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f25766ae616b144c9d3f8ab342b92a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &218973326
 GameObject:
   m_ObjectHideFlags: 0

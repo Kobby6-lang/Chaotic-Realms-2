@@ -357,9 +357,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 49593720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f25766ae616b144c9d3f8ab342b92a3, type: 3}
+  m_Script: {fileID: 11500000, guid: f5ded922af9185b408a1e7e4036269ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1876463062}
+  objectsToReset:
+  - {fileID: 6836417698364752310}
+  - {fileID: 1876463048}
 --- !u!1 &218973326
 GameObject:
   m_ObjectHideFlags: 0
@@ -6730,7 +6734,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  respawnPoint: {fileID: 1335989380}
 --- !u!114 &1876463063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8163,6 +8166,7 @@ GameObject:
   - component: {fileID: 8425542124631077905}
   - component: {fileID: 1867376910}
   - component: {fileID: 1867376915}
+  - component: {fileID: 8425542124631077908}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -8467,6 +8471,20 @@ MonoBehaviour:
   isSquashed: 0
   fallDelay: 1
   squashDelay: 0.5
+--- !u!114 &8425542124631077908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6183835912140723931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6ecbae56e13384a9c4c37b8288c244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  currentHealth: 0
 --- !u!1001 &8535313760734207778
 PrefabInstance:
   m_ObjectHideFlags: 0

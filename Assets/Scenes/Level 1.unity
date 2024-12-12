@@ -6734,6 +6734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  respawnPoint: {fileID: 0}
 --- !u!114 &1876463063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8161,12 +8162,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6836417698364752310}
-  - component: {fileID: 8425542124631077907}
   - component: {fileID: 707452113696322490}
   - component: {fileID: 8425542124631077905}
   - component: {fileID: 1867376910}
   - component: {fileID: 1867376915}
-  - component: {fileID: 8425542124631077908}
+  - component: {fileID: 8425542124631077906}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -8454,7 +8454,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3481804, y: 1.6307424, z: 1.23}
   m_Center: {x: 0.014810383, y: 0.7169166, z: 0}
---- !u!114 &8425542124631077907
+--- !u!114 &8425542124631077906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8471,20 +8471,6 @@ MonoBehaviour:
   isSquashed: 0
   fallDelay: 1
   squashDelay: 0.5
---- !u!114 &8425542124631077908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6183835912140723931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa6ecbae56e13384a9c4c37b8288c244, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 50
-  currentHealth: 0
 --- !u!1001 &8535313760734207778
 PrefabInstance:
   m_ObjectHideFlags: 0

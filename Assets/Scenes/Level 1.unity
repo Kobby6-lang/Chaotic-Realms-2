@@ -1545,7 +1545,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 250
+  m_FocalLength: 140
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -1560,7 +1560,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 5.4961762
+  field of view: 9.798185
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -5803,7 +5803,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 1876463048}
   m_Follow: {fileID: 1876463048}
   m_Lens:
-    FieldOfView: 5.4961762
+    FieldOfView: 9.798185
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -8466,7 +8466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a71592254e5914c86ec08fcbe9c9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 100
   currentHealth: 0
   isSquashed: 0
   fallDelay: 1
